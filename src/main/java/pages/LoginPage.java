@@ -1,13 +1,12 @@
 package pages;
 
-import factory.PageBase;
 import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.Waiters;
 
-import static org.testng.AssertJUnit.assertTrue;
-@Data
+
+import static factory.Constants.EMAIL;
+import static factory.Constants.PASSWORD;
 public class LoginPage extends PageBase {
 
     private final By signInButton = By.xpath("//*[@class=\"authorization-link\"]");
@@ -20,6 +19,10 @@ public class LoginPage extends PageBase {
         super(driver);
     }
 
-
-
+    public void performLogin(){
+        driver.findElement(signInButton).click();
+        driver.findElement(email).sendKeys(EMAIL);
+        driver.findElement(password).sendKeys(PASSWORD);
+        driver.findElement(loginInButton).click();
+    }
 }

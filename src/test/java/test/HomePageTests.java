@@ -1,8 +1,8 @@
 package test;
 
 
-import enums.Browser;
-import factory.BrowserProvider;
+
+import factory.WebDriverCustom;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
@@ -10,37 +10,25 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+
 
 @Test
 public class HomePageTests {
+	private static final String MAGENTO_SITE = "https://magento.softwaretestingboard.com/";
 
-	private static final String EMAIL= "andreea_chele@yahoo.com";
-	private static final String PASSWORD = "Lh@7McJuX6cFjP";
 	private WebDriver driver;
+	LoginPage loginPage = new LoginPage(driver);
 
 	@BeforeSuite
 	public void initalize() {
-		driver = BrowserProvider.createDriver(Browser.CHROME);
+		driver = WebDriverCustom.getWebDriver();
 		driver.manage().window().maximize();
 	}
 
 	@Test
-	public void homePageCheckTitle() {
-		driver.get("https://magento.softwaretestingboard.com/");
-		HomePage homePage = new HomePage(driver);
-        assertEquals("Home Page", homePage.getTitle());
-	}
-
-	@Test
 	public void performLogin() {
-		driver.get("https://magento.softwaretestingboard.com/");
-		LoginPage loginPage = new LoginPage(driver);
-		driver.findElement(loginPage.getSignInButton()).click();
-		driver.findElement(loginPage.getEmail()).sendKeys(EMAIL);
-		driver.findElement(loginPage.getPassword()).sendKeys(PASSWORD);
-		driver.findElement(loginPage.getLoginInButton()).click();
+		driver.get(MAGENTO_SITE);
+		loginPage.performLogin();
 	}
 
 	@AfterSuite

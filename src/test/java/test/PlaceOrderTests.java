@@ -3,27 +3,34 @@ package test;
 
 import enums.Browser;
 import factory.BrowserProvider;
+import lombok.SneakyThrows;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.Order;
 
 import java.util.List;
 
+import static factory.Constants.EMAIL;
+import static factory.Constants.PASSWORD;
 
-@Test
+
 public class PlaceOrderTests {
 
-	private static final String EMAIL= "xiyen66487@namewok.com";
-	private static final String PASSWORD = "gYCGKt!Huxn9gR9";
+
 	private WebDriver driver;
 
+	By productElements= By.xpath("//*[@class='product-item']");
+	By selectSize = By.xpath("//div[@class='swatch-attribute-options clearfix']//div[@aria-label='S']");
+	By selectColor = By.cssSelector("div.swatch-attribute.color");
+	By colorOption = By.cssSelector("div.swatch-option.color");
+	By addToCart = By.xpath(".//button[@title='Add to Cart']");
 
-	@BeforeSuite
+
+	@Before
 	public void initalize() {
 		driver = BrowserProvider.createDriver(Browser.CHROME);
 		driver.manage().window().maximize();
@@ -35,49 +42,21 @@ public class PlaceOrderTests {
 		driver.findElement(loginPage.getLoginInButton()).click();
 	}
 
+	@SneakyThrows
 	@Test
 	public void userCanPlaceAnOrder() {
-		List<WebElement> products = driver.findElements(By.xpath("//*[@class='product-item']"));
+		List<WebElement> products = driver.findElements(productElements);
 		products.stream().findAny().get().click();
-
+		Thread.sleep(5000);
+		WebElement size = driver.findElement(selectSize);
+		size.click();
+		WebElement colorAttribute = driver.findElement(selectColor);
+		WebElement firstColorOption = colorAttribute.findElement(colorOption);
+		firstColorOption.click();
+		WebElement addToCartButton = driver.findElement(addToCart);
+		addToCartButton.click();
 	}
-	@Test
-	public void checkNewArrivalsProductsCanBeAddedToCart() throws InterruptedException {
-		Thread.sleep(5000);
-		Order order = new Order(driver);
-		driver.findElement(order.getNewItemSection()).click();
-		Thread.sleep(5000);
-		List<WebElement> products = driver.findElements(By.xpath("//*[@class='product-item']"));
-		System.out.println(products.size());
-		Thread.sleep(5000);
-		for (WebElement product : products) {
-
-			// Select size (if available)
-			WebElement sizeElement = product.findElement(By.xpath("//*[contains(text(),'option-label-size']"));
-
-			if (sizeElement.isDisplayed()) {
-				List<WebElement> sizeOptions = sizeElement.findElements(By.cssSelector("div.swatch-option"));
-				if (!sizeOptions.isEmpty()) {
-					sizeOptions.get(0).click();
-				}
-
-				WebElement colorElement = product.findElement(By.cssSelector("div.swatch-attribute.color"));
-				if (colorElement.isDisplayed()) {
-					List<WebElement> colorOptions = colorElement.findElements(By.cssSelector("div.swatch-option"));
-					if (!colorOptions.isEmpty()) {
-						colorOptions.get(0).click();
-					}
-				}
-				WebElement addToCartButton = product.findElement(By.xpath("//*[@class='action tocart primary']"));
-				addToCartButton.click();
-				Thread.sleep(5000);
-
-			}
-		}
-
-	}
-
-	@AfterSuite
+	@After
 	public void quitDriver() {
 		driver.quit();
 		driver = null;

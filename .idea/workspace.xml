@@ -4,27 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21a9e1b1-c80c-42f2-9628-34fb05a0173f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enums/Browser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/BrowserProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/PageBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Waiters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java" afterDir="false" />
+    <list default="true" id="21a9e1b1-c80c-42f2-9628-34fb05a0173f" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/AddressFields.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/WebDriverCustom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/MyAccountPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/MyWishlistPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/AddNewAddressTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/AddToWishlistTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/CartProductTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enums/Browser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/BrowserProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/PageBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/PageBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/WaitUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Waiters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Waiters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Andreea &lt;acc.dinca@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="051029f5-79c7-4e1c-8387-52830e420a48" />
+        <option name="url" value="https://github.com/theandreead/Magento.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -64,6 +83,7 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "JUnit.HomePageTests.homePageCheckTitle.executor": "Debug",
+    "JUnit.PlaceOrderTests.userCanPlaceAnOrder.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.Magento [clean,install].executor": "Run",
     "Maven.Magento [clean].executor": "Run",
@@ -71,6 +91,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.AddNewAddressTests.addNewAddressTest.executor": "Run",
+    "TestNG.AddNewAddressTests.addProductToWishlist.executor": "Run",
+    "TestNG.AddToWishlistTests.addProductToWishlist.executor": "Run",
+    "TestNG.CartProductTests.checkProductQuantityIsCorrect.executor": "Run",
     "TestNG.HomePageTests.executor": "Run",
     "TestNG.HomePageTests.homePageCheckTitle.executor": "Run",
     "TestNG.HomePageTests.performLogin.executor": "Run",
@@ -79,6 +103,9 @@
     "TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart (1).executor": "Debug",
     "TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart.executor": "Run",
     "TestNG.PlaceOrderTests.performLogin.executor": "Run",
+    "TestNG.PlaceOrderTests.userCanPlaceAnOrder.executor": "Run",
+    "TestNG.SelectProductTests.addProductToWishlist.executor": "Run",
+    "TestNG.SelectProductTests.selectProductAndAddToCart.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -101,10 +128,12 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test" />
+      <recent name="factory" />
+      <recent name="pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart">
-    <configuration name="HomePageTests.homePageCheckTitle" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.AddNewAddressTests.addProductToWishlist">
+    <configuration name="AddNewAddressTests.addNewAddressTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Magento" />
       <extension name="coverage">
         <pattern>
@@ -113,8 +142,62 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.HomePageTests" />
-      <option name="METHOD_NAME" value="homePageCheckTitle" />
+      <option name="MAIN_CLASS_NAME" value="test.AddNewAddressTests" />
+      <option name="METHOD_NAME" value="addNewAddressTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddNewAddressTests.addProductToWishlist" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Magento" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.AddNewAddressTests" />
+      <option name="METHOD_NAME" value="addProductToWishlist" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddToWishlistTests.addProductToWishlist" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Magento" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.AddToWishlistTests" />
+      <option name="METHOD_NAME" value="addProductToWishlist" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddToWishlistTests.selectProductAndAddToCart" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Magento" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.AddToWishlistTests" />
+      <option name="METHOD_NAME" value="selectProductAndAddToCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -140,67 +223,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderPlacementTests.homePageCheckTitle" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Magento" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.OrderPlacementTests" />
-      <option name="METHOD_NAME" value="homePageCheckTitle" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Magento" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.PlaceOrderTests" />
-      <option name="METHOD_NAME" value="checkNewArrivalsProductsCanBeAddedToCart" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaceOrderTests.performLogin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Magento" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.PlaceOrderTests" />
-      <option name="METHOD_NAME" value="performLogin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart" />
-        <item itemvalue="TestNG.PlaceOrderTests.performLogin" />
+        <item itemvalue="TestNG.AddNewAddressTests.addProductToWishlist" />
+        <item itemvalue="TestNG.AddToWishlistTests.addProductToWishlist" />
+        <item itemvalue="TestNG.AddNewAddressTests.addNewAddressTest" />
         <item itemvalue="TestNG.HomePageTests.performLogin" />
-        <item itemvalue="TestNG.HomePageTests.homePageCheckTitle" />
-        <item itemvalue="TestNG.OrderPlacementTests.homePageCheckTitle" />
+        <item itemvalue="TestNG.AddToWishlistTests.selectProductAndAddToCart" />
       </list>
     </recent_temporary>
   </component>
@@ -221,8 +250,26 @@
       <updated>1707166170739</updated>
       <workItem from="1707166171860" duration="6738000" />
       <workItem from="1707217203713" duration="207000" />
-      <workItem from="1707217423779" duration="23663000" />
+      <workItem from="1707217423779" duration="28639000" />
+      <workItem from="1707386990296" duration="2167000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1707323795004</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707323795004</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1707324055292</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707324055292</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,13 +286,17 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/test/java/test/AddToWishlistTests.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
