@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21a9e1b1-c80c-42f2-9628-34fb05a0173f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enums/Browser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/BrowserProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/PageBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Waiters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java" afterDir="false" />
+    <list default="true" id="21a9e1b1-c80c-42f2-9628-34fb05a0173f" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/PageBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/PageBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +34,26 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Andreea &lt;acc.dinca@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;theandreead&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="051029f5-79c7-4e1c-8387-52830e420a48" />
+        <option name="url" value="https://github.com/theandreead/Magento.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -60,38 +68,40 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "JUnit.HomePageTests.homePageCheckTitle.executor": "Debug",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.Magento [clean,install].executor": "Run",
-    "Maven.Magento [clean].executor": "Run",
-    "Maven.Magento [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.HomePageTests.executor": "Run",
-    "TestNG.HomePageTests.homePageCheckTitle.executor": "Run",
-    "TestNG.HomePageTests.performLogin.executor": "Run",
-    "TestNG.OrderPlacementTests.OrderPlacementTests.executor": "Run",
-    "TestNG.OrderPlacementTests.homePageCheckTitle.executor": "Run",
-    "TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart (1).executor": "Debug",
-    "TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart.executor": "Run",
-    "TestNG.PlaceOrderTests.performLogin.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;JUnit.HomePageTests.homePageCheckTitle.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PlaceOrderTests.userCanPlaceAnOrder.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Magento [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Magento [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Magento [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.HomePageTests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HomePageTests.homePageCheckTitle.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HomePageTests.performLogin.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.OrderPlacementTests.OrderPlacementTests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.OrderPlacementTests.homePageCheckTitle.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart (1).executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PlaceOrderTests.performLogin.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PlaceOrderTests.userCanPlaceAnOrder.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pages" />
@@ -103,8 +113,8 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart">
-    <configuration name="HomePageTests.homePageCheckTitle" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlaceOrderTests.userCanPlaceAnOrder">
+    <configuration name="PlaceOrderTests.userCanPlaceAnOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Magento" />
       <extension name="coverage">
         <pattern>
@@ -113,11 +123,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.HomePageTests" />
-      <option name="METHOD_NAME" value="homePageCheckTitle" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
+      <option name="MAIN_CLASS_NAME" value="test.PlaceOrderTests" />
+      <option name="METHOD_NAME" value="userCanPlaceAnOrder" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,24 +141,6 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.HomePageTests" />
       <option name="METHOD_NAME" value="performLogin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderPlacementTests.homePageCheckTitle" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Magento" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.OrderPlacementTests" />
-      <option name="METHOD_NAME" value="homePageCheckTitle" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -194,13 +184,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlaceOrderTests.userCanPlaceAnOrder" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Magento" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.PlaceOrderTests" />
+      <option name="METHOD_NAME" value="userCanPlaceAnOrder" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlaceOrderTests.userCanPlaceAnOrder" />
+        <item itemvalue="TestNG.HomePageTests.performLogin" />
+        <item itemvalue="TestNG.PlaceOrderTests.userCanPlaceAnOrder" />
         <item itemvalue="TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart" />
         <item itemvalue="TestNG.PlaceOrderTests.performLogin" />
-        <item itemvalue="TestNG.HomePageTests.performLogin" />
-        <item itemvalue="TestNG.HomePageTests.homePageCheckTitle" />
-        <item itemvalue="TestNG.OrderPlacementTests.homePageCheckTitle" />
       </list>
     </recent_temporary>
   </component>
@@ -221,8 +229,26 @@
       <updated>1707166170739</updated>
       <workItem from="1707166171860" duration="6738000" />
       <workItem from="1707217203713" duration="207000" />
-      <workItem from="1707217423779" duration="23663000" />
+      <workItem from="1707217423779" duration="28639000" />
+      <workItem from="1707386990296" duration="2167000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1707323795004</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707323795004</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1707324055292</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707324055292</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,15 +265,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>

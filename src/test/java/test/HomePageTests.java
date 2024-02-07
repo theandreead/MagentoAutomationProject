@@ -13,11 +13,12 @@ import pages.LoginPage;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
+import static factory.Constants.EMAIL;
+import static factory.Constants.PASSWORD;
+
 @Test
 public class HomePageTests {
 
-	private static final String EMAIL= "andreea_chele@yahoo.com";
-	private static final String PASSWORD = "Lh@7McJuX6cFjP";
 	private WebDriver driver;
 
 	@BeforeSuite

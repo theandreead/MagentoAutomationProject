@@ -1,6 +1,5 @@
 package pages;
 
-import factory.PageBase;
 import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

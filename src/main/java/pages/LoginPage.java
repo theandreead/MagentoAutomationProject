@@ -1,12 +1,9 @@
 package pages;
 
-import factory.PageBase;
 import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.Waiters;
 
-import static org.testng.AssertJUnit.assertTrue;
 @Data
 public class LoginPage extends PageBase {
 
