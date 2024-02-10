@@ -12,6 +12,9 @@ import pages.LoginPage;
 
 
 
+import static factory.Constants.EMAIL;
+import static factory.Constants.PASSWORD;
+
 @Test
 public class HomePageTests {
 	private static final String MAGENTO_SITE = "https://magento.softwaretestingboard.com/";
