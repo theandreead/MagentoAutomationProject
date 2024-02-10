@@ -7,5 +7,6 @@ public class Constants {
 
     public static final String SHOPPING_CART = "Shopping Cart";
     public static final String CART = "https://magento.softwaretestingboard.com/checkout/cart/";
-
+    public static final String ACCOUNT_ADDRESS = "https://magento.softwaretestingboard.com/customer/address/new/";
+    public static final String CREATE_ACCOUNT = "https://magento.softwaretestingboard.com/customer/account/create/";
 }

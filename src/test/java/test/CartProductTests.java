@@ -33,9 +33,22 @@ public class CartProductTests {
     }
 
     @Test
+    public void addProductAndCheckCounterUpdate() {
+        int initialCounterValue = cartPage.getCounterValue();
+        productPage.selectProduct();
+        productPage.selectSize();
+        productPage.selectColor();
+        productPage.addToCard();
+        int updatedCounterValue = cartPage.getCounterValue();
+        assert updatedCounterValue > initialCounterValue : "Updated counter is not greater than initial counter value";
+    }
+
+    @Test
     public void checkCartProductQuantityIsCorrect() {
         cartPage.openCart();
         int initialQuantity = cartPage.getProductQuantity();
+        homePage.goToSection("Women");
+        homePage.goToFirstSubsection("Women");
         productPage.selectProduct();
         productPage.selectSize();
         productPage.selectColor();
@@ -46,14 +59,14 @@ public class CartProductTests {
     }
 
     @Test
-    public void addProductAndCheckCounterUpdate() {
-        int initialCounterValue = cartPage.getCounterValue();
+    public void checkCartPricesAreCorrect() {
         productPage.selectProduct();
         productPage.selectSize();
         productPage.selectColor();
         productPage.addToCard();
-        int updatedCounterValue = cartPage.getCounterValue();
-        assert updatedCounterValue > initialCounterValue : "Updated counter is not greater than initial counter value";
+        cartPage.openCart();
+        assertTrue(cartPage.checkCartPriceSubtotal(), "Cart subtotal price is not correct");
+        assertTrue(cartPage.checkTotalPriceIsCorrect(), "Cart total price is not correct");
     }
 
     @AfterSuite

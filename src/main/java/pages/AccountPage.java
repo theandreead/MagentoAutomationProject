@@ -17,14 +17,14 @@ public class AccountPage extends PageBase {
     By countryList = By.id("country");
     By saveAddressBtn = By.className("save");
     By addNewAddressBtn = By.className("add");
-    By addressSavedPopup= By.className("message-success");
+    By addressSavedPopup= By.cssSelector("message-success");
 
     public AccountPage(WebDriver driver) {
         super(driver);
     }
 
 
-    public void fillAddressFields(AddressFields addressFields) {
+    public void completeNewAddressFields(AddressFields addressFields) {
         driver.findElement(phoneNumber).sendKeys(addressFields.getPhoneNumber());
         driver.findElement(streetAddress).sendKeys(addressFields.getStreetAddress());
         driver.findElement(city).sendKeys(addressFields.getCity());
@@ -47,7 +47,7 @@ public class AccountPage extends PageBase {
         driver.findElement(addNewAddressBtn).click();
     }
 
-    public void isAddedAdressPopupDisplayed() {
+    public void isAddedAddressPopupDisplayed() {
         WebElement addressIsSavedPopup = driver.findElement(addressSavedPopup);
         addressIsSavedPopup.isDisplayed();
     }

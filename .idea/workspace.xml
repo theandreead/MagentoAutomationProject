@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21a9e1b1-c80c-42f2-9628-34fb05a0173f" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/NewUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/RegistrationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/CreateNewUserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/factory/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/MyWishlistPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WishlistPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/AddNewAddressTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AddNewAddressTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/AddToWishlistTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AddToWishlistTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/CartProductTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/CartProductTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +83,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.AddNewAddressTests.addNewAddressForAccount.executor": "Run",
     "TestNG.AddNewAddressTests.addNewAddressTest.executor": "Run",
     "TestNG.AddNewAddressTests.addProductToWishlist.executor": "Run",
     "TestNG.AddToWishlistTests.addProductToWishlist.executor": "Run",
     "TestNG.C:/Users/PC/IdeaProjects/Magento/src/testng.xml.executor": "Run",
+    "TestNG.CartProductTests.addProductAndCheckCounterUpdate.executor": "Run",
+    "TestNG.CartProductTests.checkCartPricesAreCorrect.executor": "Run",
     "TestNG.CartProductTests.checkCartProductQuantityIsCorrect.executor": "Run",
+    "TestNG.CartProductTests.checkCartTotalPriceIsCorrect.executor": "Run",
     "TestNG.CartProductTests.checkProductQuantityIsCorrect.executor": "Run",
+    "TestNG.CreateNewUserTest.createNewUserTest.executor": "Run",
     "TestNG.HomePageTests.executor": "Run",
     "TestNG.HomePageTests.goThroughSectionsAndSubSections.executor": "Run",
     "TestNG.HomePageTests.homePageCheckTitle.executor": "Run",
@@ -119,10 +128,12 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test" />
+      <recent name="factory" />
+      <recent name="pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AddNewAddressTests.addProductToWishlist">
-    <configuration name="AddNewAddressTests.addProductToWishlist" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CartProductTests.checkCartProductQuantityIsCorrect">
+    <configuration name="AddNewAddressTests.addNewAddressForAccount" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Magento" />
       <extension name="coverage">
         <pattern>
@@ -132,7 +143,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.AddNewAddressTests" />
-      <option name="METHOD_NAME" value="addProductToWishlist" />
+      <option name="METHOD_NAME" value="addNewAddressForAccount" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -140,7 +151,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddToWishlistTests.addProductToWishlist" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartProductTests.checkCartPricesAreCorrect" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Magento" />
       <extension name="coverage">
         <pattern>
@@ -149,8 +160,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.AddToWishlistTests" />
-      <option name="METHOD_NAME" value="addProductToWishlist" />
+      <option name="MAIN_CLASS_NAME" value="test.CartProductTests" />
+      <option name="METHOD_NAME" value="checkCartPricesAreCorrect" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -176,7 +187,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests.goThroughSectionsAndSubSections" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartProductTests.checkCartTotalPriceIsCorrect" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Magento" />
       <extension name="coverage">
         <pattern>
@@ -185,8 +196,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.HomePageTests" />
-      <option name="METHOD_NAME" value="goThroughSectionsAndSubSections" />
+      <option name="MAIN_CLASS_NAME" value="test.CartProductTests" />
+      <option name="METHOD_NAME" value="checkCartTotalPriceIsCorrect" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -194,7 +205,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests.performLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateNewUserTest.createNewUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Magento" />
       <extension name="coverage">
         <pattern>
@@ -203,8 +214,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.HomePageTests" />
-      <option name="METHOD_NAME" value="performLogin" />
+      <option name="MAIN_CLASS_NAME" value="test.CreateNewUserTest" />
+      <option name="METHOD_NAME" value="createNewUserTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -214,11 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AddNewAddressTests.addProductToWishlist" />
         <item itemvalue="TestNG.CartProductTests.checkCartProductQuantityIsCorrect" />
-        <item itemvalue="TestNG.AddToWishlistTests.addProductToWishlist" />
-        <item itemvalue="TestNG.HomePageTests.goThroughSectionsAndSubSections" />
-        <item itemvalue="TestNG.HomePageTests.performLogin" />
+        <item itemvalue="TestNG.CreateNewUserTest.createNewUserTest" />
+        <item itemvalue="TestNG.AddNewAddressTests.addNewAddressForAccount" />
+        <item itemvalue="TestNG.CartProductTests.checkCartPricesAreCorrect" />
+        <item itemvalue="TestNG.CartProductTests.checkCartTotalPriceIsCorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707585482212</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1707586771938</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707586771938</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +316,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/test/CartProductTests.java</url>
-          <line>35</line>
+          <line>46</line>
           <properties class="test.CartProductTests" method="checkCartProductQuantityIsCorrect">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

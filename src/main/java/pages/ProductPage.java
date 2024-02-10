@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,7 +27,9 @@ public class ProductPage extends PageBase {
     }
 
 
+    @SneakyThrows
     public void selectProduct() {
+        Thread.sleep(5000);
         List<WebElement> products = driver.findElements(productElements);
         products.stream().findAny().get().click();
     }
@@ -47,6 +50,7 @@ public class ProductPage extends PageBase {
     }
 
     public void addToCard() {
+        waiters.waitForVisible(addToCart);
         waiters.waitForClickable(addToCart);
         WebElement addToCartButton = driver.findElement(addToCart);
         addToCartButton.click();

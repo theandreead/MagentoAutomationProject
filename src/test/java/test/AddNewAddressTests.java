@@ -8,8 +8,9 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.AccountPage;
-import pages.WishlistPage;
-import pages.ProductPage;
+
+import static factory.Constants.ACCOUNT_ADDRESS;
+import static factory.Constants.MAGENTO_SITE;
 
 @Test
 public class AddNewAddressTests {
@@ -21,14 +22,16 @@ public class AddNewAddressTests {
 	public void initalize() {
 		driver = WebDriverCustom.getWebDriver();
 		driver.manage().window().maximize();
-		driver.get("https://magento.softwaretestingboard.com/");
+		driver.get(MAGENTO_SITE);
 		loginPage.performLogin();
 	}
 
 	@Test
-	public void addProductToWishlist() {
-		driver.get("https://magento.softwaretestingboard.com/customer/address/new/");
-		accountPage.fillAddressFields(new AddressFields());
+	public void addNewAddressForAccount() {
+		driver.get(ACCOUNT_ADDRESS);
+		accountPage.completeNewAddressFields(new AddressFields());
+		accountPage.saveAddress();
+		accountPage.isAddedAddressPopupDisplayed();
 	}
 
 	@AfterSuite

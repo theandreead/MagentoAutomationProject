@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import pages.*;
 
+import static factory.Constants.MAGENTO_SITE;
+
 @Test
 public class AddToWishlistTests {
 
@@ -19,7 +21,7 @@ public class AddToWishlistTests {
 	public void initalize() {
 		driver = WebDriverCustom.getWebDriver();
 		driver.manage().window().maximize();
-		driver.get("https://magento.softwaretestingboard.com/");
+		driver.get(MAGENTO_SITE);
 		loginPage.performLogin();
 	}
 
