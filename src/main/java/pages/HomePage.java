@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-
+@Slf4j
 public class HomePage extends PageBase {
 
     private final By switchIcon = By.xpath("//*[@class='customer-menu']");
@@ -34,23 +35,26 @@ public class HomePage extends PageBase {
         WebElement randomTab = tabs.get(randomTabIndex);
         randomTab.click();
 
-
-    // Randomly select a product from the selected tab
-
-        List<WebElement> products = randomTab.findElements(By.cssSelector(".product-item-details"));
-        int randomProductIndex = random.nextInt(products.size());
-        WebElement randomProduct = products.get(randomProductIndex);
-        randomProduct.click();
+//
+//    // Randomly select a product from the selected tab
+//
+//        List<WebElement> products = randomTab.findElements(By.cssSelector(".product-item-details"));
+//        int randomProductIndex = random.nextInt(products.size());
+//        WebElement randomProduct = products.get(randomProductIndex);
+//        randomProduct.click();
     }
 
     // Randomly select a size (if applicable)
     public void selectRandomSize() {
         Random random = new Random();
-        List<WebElement> sizes = driver.findElements(By.cssSelector(".swatch-attribute.size .swatch-option"));
-        if (!sizes.isEmpty()) {
+
+        if (!driver.findElements(By.cssSelector(".swatch-attribute.size .swatch-option")).isEmpty()) {
+            List<WebElement> sizes = driver.findElements(By.cssSelector(".swatch-attribute.size .swatch-option"));
             int randomSizeIndex = random.nextInt(sizes.size());
             WebElement randomSize = sizes.get(randomSizeIndex);
             randomSize.click();
+        } else {
+            log.info("size not required");
         }
     }
 
@@ -62,6 +66,31 @@ public class HomePage extends PageBase {
             int randomColorIndex = random.nextInt(colors.size());
             WebElement randomColor = colors.get(randomColorIndex);
             randomColor.click();
+        }
+    }
+
+    public void goToSection(String sectionName) {
+        List<WebElement> categories = driver.findElements(By.cssSelector("a.level-top"));
+        for (WebElement listItem : categories) {
+            if (listItem.getText().contains(sectionName)) {
+                listItem.click();
+                break;
+            }
+        }
+    }
+
+    public void goToFirstSubsection(String section) {
+        List<WebElement> categories = driver.findElements(By.cssSelector("a.level-top"));
+        for (WebElement listItem : categories) {
+            if (listItem.getText().contains(section)) {
+                hoverOver(listItem);
+                break;
+            }
+        }
+        List<WebElement> subCategories= driver.findElements(By.cssSelector(".parent .category-item a"));
+        // Click on the first li element from the list
+        if (!subCategories.isEmpty()) {
+            subCategories.get(0).click();
         }
     }
 }

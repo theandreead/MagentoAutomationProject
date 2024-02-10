@@ -7,8 +7,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.MyAccountPage;
-import pages.MyWishlistPage;
+import pages.AccountPage;
+import pages.WishlistPage;
 import pages.ProductPage;
 
 @Test
@@ -16,9 +16,7 @@ public class AddNewAddressTests {
 
 	private WebDriver driver;
 	LoginPage loginPage = new LoginPage(driver);
-	ProductPage productPage = new ProductPage(driver);
-	MyWishlistPage wishListPage = new MyWishlistPage(driver);
-	MyAccountPage accountPage = new MyAccountPage(driver);
+	AccountPage accountPage = new AccountPage(driver);
 	@BeforeSuite
 	public void initalize() {
 		driver = WebDriverCustom.getWebDriver();

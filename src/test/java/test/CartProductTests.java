@@ -7,6 +7,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import pages.CartPage;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ProductPage;
 
@@ -21,6 +22,7 @@ public class CartProductTests {
     LoginPage loginPage = new LoginPage(driver);
     ProductPage productPage = new ProductPage(driver);
     CartPage cartPage = new CartPage(driver);
+    HomePage homePage = new HomePage(driver);
 
     @BeforeSuite
     public void initalize() {

@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utils.Waiters;
 
-import java.util.List;
-
-public class MyAccountPage extends PageBase {
+public class AccountPage extends PageBase {
     private final Waiters waiters = new Waiters(driver);
 
     By phoneNumber = By.id("telephone");
@@ -21,7 +19,7 @@ public class MyAccountPage extends PageBase {
     By addNewAddressBtn = By.className("add");
     By addressSavedPopup= By.className("message-success");
 
-    public MyAccountPage(WebDriver driver) {
+    public AccountPage(WebDriver driver) {
         super(driver);
     }
 

@@ -13,7 +13,8 @@ public class AddToWishlistTests {
 	private WebDriver driver;
 	LoginPage loginPage = new LoginPage(driver);
 	ProductPage productPage = new ProductPage(driver);
-	MyWishlistPage wishListPage = new MyWishlistPage(driver);
+	WishlistPage wishListPage = new WishlistPage(driver);
+	HomePage homePage = new HomePage(driver);
 	@BeforeSuite
 	public void initalize() {
 		driver = WebDriverCustom.getWebDriver();
@@ -24,6 +25,7 @@ public class AddToWishlistTests {
 
 	@Test
 	public void addProductToWishlist() {
+		homePage.goToSection("Men");
 		productPage.selectProduct();
 		productPage.addToWishlist();
 		wishListPage.isProductWishlistPopupDisplayed();

@@ -3,13 +3,12 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.Waiters;
 
-public class MyWishlistPage extends PageBase {
+public class WishlistPage extends PageBase {
 
     By productToWishList= By.xpath("//*[@class='product-item']");
 
-    public MyWishlistPage(WebDriver driver) {super(driver);}
+    public WishlistPage(WebDriver driver) {super(driver);}
 
 
     public void isProductWishlistPopupDisplayed() {

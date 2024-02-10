@@ -14,17 +14,19 @@ import static factory.Constants.PASSWORD;
 public class ProductPage extends PageBase {
     Waiters waiters = new Waiters(driver);
 
-    By productElements= By.xpath("//*[@class='product-item']");
+    By productElements = By.xpath("//*[@class='product-item']");
     By size = By.cssSelector(".swatch-option.text");
     By selectColor = By.cssSelector("div.swatch-attribute.color");
     By colorOption = By.cssSelector("div.swatch-option.color");
     By addToCart = By.xpath(".//button[@title='Add to Cart']");
     By addToWishlist = By.xpath("//*[@class='action towishlist']");
-    public ProductPage (WebDriver driver) {super(driver);}
+
+    public ProductPage(WebDriver driver) {
+        super(driver);
+    }
 
 
     public void selectProduct() {
-        driver.get("https://magento.softwaretestingboard.com/what-is-new.html");
         List<WebElement> products = driver.findElements(productElements);
         products.stream().findAny().get().click();
     }
@@ -35,8 +37,8 @@ public class ProductPage extends PageBase {
         List<WebElement> availableSizes = driver.findElements(size);
         WebElement randomSize = availableSizes.get(random.nextInt(availableSizes.size() - 1));
         randomSize.click();
-
     }
+
     public void selectColor() {
         waiters.waitForVisible(selectColor);
         WebElement colorAttribute = driver.findElement(selectColor);

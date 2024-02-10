@@ -1,7 +1,5 @@
 package test;
 
-
-
 import factory.WebDriverCustom;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
@@ -10,33 +8,36 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
-
-
-import static factory.Constants.EMAIL;
-import static factory.Constants.PASSWORD;
+import static factory.Constants.MAGENTO_SITE;
 
 @Test
 public class HomePageTests {
-	private static final String MAGENTO_SITE = "https://magento.softwaretestingboard.com/";
 
-	private WebDriver driver;
-	LoginPage loginPage = new LoginPage(driver);
+    private WebDriver driver;
+    LoginPage loginPage = new LoginPage(driver);
+    HomePage homePage = new HomePage(driver);
 
-	@BeforeSuite
-	public void initalize() {
-		driver = WebDriverCustom.getWebDriver();
-		driver.manage().window().maximize();
-	}
+    @BeforeSuite
+    public void initalize() {
+        driver = WebDriverCustom.getWebDriver();
+        driver.manage().window().maximize();
+        driver.get(MAGENTO_SITE);
+    }
 
-	@Test
-	public void performLogin() {
-		driver.get(MAGENTO_SITE);
-		loginPage.performLogin();
-	}
+    @Test
+    public void performLogin() {
+        loginPage.performLogin();
+    }
 
-	@AfterSuite
-	public void quitDriver() {
-		driver.quit();
-		driver = null;
-	}
+    @Test
+    public void goThroughSectionsAndSubSections() {
+        homePage.goToSection("Women");
+        homePage.goToFirstSubsection("Women");
+    }
+
+    @AfterSuite
+    public void quitDriver() {
+        driver.quit();
+        driver = null;
+    }
 }
