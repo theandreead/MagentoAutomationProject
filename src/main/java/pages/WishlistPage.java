@@ -10,7 +10,6 @@ public class WishlistPage extends PageBase {
 
     public WishlistPage(WebDriver driver) {super(driver);}
 
-
     public void isProductWishlistPopupDisplayed() {
         WebElement productAddedToWishlistMessage = driver.findElement(productToWishList);
         productAddedToWishlistMessage.isDisplayed();

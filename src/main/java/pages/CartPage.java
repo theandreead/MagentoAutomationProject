@@ -38,7 +38,6 @@ public class CartPage extends PageBase {
         waiters.waitForVisible(cartPageTitle);
         String pageTitle = driver.findElement(cartPageTitle).getText();
         Assert.assertEquals(pageTitle, SHOPPING_CART, "Page title is not as expected");
-
     }
 
     @SneakyThrows

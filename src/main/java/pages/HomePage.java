@@ -88,7 +88,6 @@ public class HomePage extends PageBase {
             }
         }
         List<WebElement> subCategories= driver.findElements(By.cssSelector(".parent .category-item a"));
-        // Click on the first li element from the list
         if (!subCategories.isEmpty()) {
             subCategories.get(0).click();
         }

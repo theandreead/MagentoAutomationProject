@@ -3,9 +3,12 @@ package pages;
 import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import static factory.Constants.EMAIL;
 import static factory.Constants.PASSWORD;
+import static org.testng.AssertJUnit.assertTrue;
+
 public class LoginPage extends PageBase {
 
     private final By signInButton = By.xpath("//*[@class=\"authorization-link\"]");
@@ -23,5 +26,6 @@ public class LoginPage extends PageBase {
         driver.findElement(email).sendKeys(EMAIL);
         driver.findElement(password).sendKeys(PASSWORD);
         driver.findElement(loginInButton).click();
+        Assert.assertTrue(driver.findElement(userAccountName).isDisplayed(), "User Account is not logged-in");
     }
 }

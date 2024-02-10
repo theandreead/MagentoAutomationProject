@@ -42,6 +42,5 @@ public class RegistrationPage extends PageBase {
         Thread.sleep(5000);
         String registrationSuccessful = driver.findElement(successfullRegistrationPopup).getText();
         assertEquals(EXPECTED_REGISTRATION_MESSAGE, registrationSuccessful);
-
     }
 }

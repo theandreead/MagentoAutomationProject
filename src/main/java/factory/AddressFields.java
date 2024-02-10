@@ -61,27 +61,4 @@ public class AddressFields {
         return randomString.toString();
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getStreetAddress() {
-        return streetAddress;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 }
