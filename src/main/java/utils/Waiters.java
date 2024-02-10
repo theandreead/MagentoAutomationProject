@@ -1,8 +1,10 @@
 package utils;
 
+import factory.WebDriverCustom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,22 +14,18 @@ import java.util.function.Function;
 
 public class Waiters {
 
-    private static final Long DEFAULT_WAIT_TIME = 20L;
     private final WebDriverWait wait;
 
-
     public Waiters(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
+        WebDriver newDriver = WebDriverCustom.getWebDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public Waiters waitForElementToBeVisible(By locator) {
-        return (Waiters) wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public WebElement waitForClickable(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public Waiters waitForElementToBeClickable(By locator) {
-        return (Waiters) wait.until(ExpectedConditions.elementToBeClickable(locator));
+    public WebElement waitForVisible(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
-
-
 }

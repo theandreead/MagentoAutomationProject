@@ -1,0 +1,818 @@
+Index: src/main/java/pages/HomePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pages;\r\n\r\nimport org.openqa.selenium.WebDriver;\r\n\r\n\r\npublic class HomePage extends PageBase {\r\n\r\n\r\n    public HomePage(WebDriver driver) {\r\n        super(driver);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pages/HomePage.java b/src/main/java/pages/HomePage.java
+--- a/src/main/java/pages/HomePage.java	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
++++ b/src/main/java/pages/HomePage.java	(date 1707570077979)
+@@ -1,12 +1,67 @@
+ package pages;
+ 
++import org.openqa.selenium.By;
+ import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.ui.Select;
++
++import java.util.List;
++import java.util.Random;
++import java.util.concurrent.TimeUnit;
+ 
+ 
+ public class HomePage extends PageBase {
+ 
+-
++    private final By switchIcon = By.xpath("//*[@class='customer-menu']");
+     public HomePage(WebDriver driver) {
+         super(driver);
+     }
++
++    public void openWishlist(){
++        WebElement dropdown = driver.findElement(switchIcon); // Replace "dropdownId" with the actual id of the dropdown
++        dropdown.click();
++        // Create a Select object
++        Select select = new Select(dropdown);
++
++        // Select an option by visible text
++        select.selectByVisibleText("My Wish List");
++    }
++    public void selectProductFromRandomTab() {
++        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
++        List<WebElement> tabs = driver.findElements(By.cssSelector("a.level-top"));
++        Random random = new Random();
++        int randomTabIndex = random.nextInt(tabs.size()-1);
++        WebElement randomTab = tabs.get(randomTabIndex);
++        randomTab.click();
++
++
++    // Randomly select a product from the selected tab
++
++        List<WebElement> products = randomTab.findElements(By.cssSelector(".product-item-details"));
++        int randomProductIndex = random.nextInt(products.size());
++        WebElement randomProduct = products.get(randomProductIndex);
++        randomProduct.click();
++    }
++
++    // Randomly select a size (if applicable)
++    public void selectRandomSize() {
++        Random random = new Random();
++        List<WebElement> sizes = driver.findElements(By.cssSelector(".swatch-attribute.size .swatch-option"));
++        if (!sizes.isEmpty()) {
++            int randomSizeIndex = random.nextInt(sizes.size());
++            WebElement randomSize = sizes.get(randomSizeIndex);
++            randomSize.click();
++        }
++    }
++
++    // Randomly select a color (if applicable)
++    public void selectColor() {
++        Random random = new Random();
++        List<WebElement> colors = driver.findElements(By.cssSelector(".swatch-attribute.color .swatch-option"));
++        if (!colors.isEmpty()) {
++            int randomColorIndex = random.nextInt(colors.size());
++            WebElement randomColor = colors.get(randomColorIndex);
++            randomColor.click();
++        }
++    }
+ }
+Index: src/main/java/pages/Order.java
+===================================================================
+diff --git a/src/main/java/pages/Order.java b/src/main/java/pages/Order.java
+deleted file mode 100644
+--- a/src/main/java/pages/Order.java	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
++++ /dev/null	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
+@@ -1,36 +0,0 @@
+-package pages;
+-
+-import lombok.Data;
+-import org.openqa.selenium.By;
+-import org.openqa.selenium.WebDriver;
+-import org.openqa.selenium.WebElement;
+-
+-import java.util.List;
+-
+-@Data
+-public class Order extends PageBase {
+-
+-   private WebDriver driver;
+-   private final By newItemSection = By.xpath("//*[@id='ui-id-3']");
+-
+-    public Order(WebDriver driver) {
+-        super(driver);
+-    }
+-
+-
+-    public int countNewProducts() {
+-        List<WebElement> newProductElements = driver.findElements(By.xpath("//*[@class=\"product-item-info\"]"));
+-        return newProductElements.size();
+-    }
+-
+-    public  void selectColorAndAddToCart() {
+-//        driver.findElement(newItemSection).click();
+-        List<WebElement> newProducts = driver.findElements(By.xpath("//*[@class=\"product-item-info\"]"));
+-        for (WebElement product : newProducts) {
+-            product.findElement(By.xpath("//*[@aria-label='Color']")).click();
+-            product.findElement(By.xpath("//*[@aria-label='S']")).click();
+-            product.findElement(By.className("add-to-cart")).click();
+-            System.out.println("Added product to cart.");
+-    }
+-}
+-}
+Index: src/main/java/utils/WaitUtility.java
+===================================================================
+diff --git a/src/main/java/utils/WaitUtility.java b/src/main/java/utils/WaitUtility.java
+deleted file mode 100644
+--- a/src/main/java/utils/WaitUtility.java	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
++++ /dev/null	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
+@@ -1,26 +0,0 @@
+-package utils;
+-
+-import org.openqa.selenium.WebDriver;
+-import org.openqa.selenium.WebElement;
+-import org.openqa.selenium.support.ui.ExpectedConditions;
+-import org.openqa.selenium.support.ui.WebDriverWait;
+-
+-import java.time.Duration;
+-
+-public class WaitUtility {
+-    private final int timeout = 10;
+-    private final WebDriverWait wait;
+-
+-    public WaitUtility(WebDriver driver) {
+-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+-    }
+-
+-    public WebElement waitForVisibilityOfElement(WebElement element) {
+-        return wait.until(ExpectedConditions.visibilityOf(element));
+-    }
+-
+-    public WebElement waitForElementToBeClickable(WebElement element) {
+-        return wait.until(ExpectedConditions.elementToBeClickable(element));
+-    }
+-}
+-
+Index: src/test/java/test/PlaceOrderTests.java
+===================================================================
+diff --git a/src/test/java/test/PlaceOrderTests.java b/src/test/java/test/PlaceOrderTests.java
+deleted file mode 100644
+--- a/src/test/java/test/PlaceOrderTests.java	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
++++ /dev/null	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
+@@ -1,64 +0,0 @@
+-package test;
+-
+-
+-import enums.Browser;
+-import factory.BrowserProvider;
+-import lombok.SneakyThrows;
+-import org.junit.After;
+-import org.junit.Before;
+-import org.junit.Test;
+-import org.openqa.selenium.By;
+-import org.openqa.selenium.WebDriver;
+-import org.openqa.selenium.WebElement;
+-import pages.LoginPage;
+-
+-import java.util.List;
+-
+-import static factory.Constants.EMAIL;
+-import static factory.Constants.PASSWORD;
+-
+-
+-public class PlaceOrderTests {
+-
+-
+-	private WebDriver driver;
+-
+-	By productElements= By.xpath("//*[@class='product-item']");
+-	By selectSize = By.xpath("//div[@class='swatch-attribute-options clearfix']//div[@aria-label='S']");
+-	By selectColor = By.cssSelector("div.swatch-attribute.color");
+-	By colorOption = By.cssSelector("div.swatch-option.color");
+-	By addToCart = By.xpath(".//button[@title='Add to Cart']");
+-
+-
+-	@Before
+-	public void initalize() {
+-		driver = BrowserProvider.createDriver(Browser.CHROME);
+-		driver.manage().window().maximize();
+-		driver.get("https://magento.softwaretestingboard.com/");
+-		LoginPage loginPage = new LoginPage(driver);
+-		driver.findElement(loginPage.getSignInButton()).click();
+-		driver.findElement(loginPage.getEmail()).sendKeys(EMAIL);
+-		driver.findElement(loginPage.getPassword()).sendKeys(PASSWORD);
+-		driver.findElement(loginPage.getLoginInButton()).click();
+-	}
+-
+-	@SneakyThrows
+-	@Test
+-	public void userCanPlaceAnOrder() {
+-		List<WebElement> products = driver.findElements(productElements);
+-		products.stream().findAny().get().click();
+-		Thread.sleep(5000);
+-		WebElement size = driver.findElement(selectSize);
+-		size.click();
+-		WebElement colorAttribute = driver.findElement(selectColor);
+-		WebElement firstColorOption = colorAttribute.findElement(colorOption);
+-		firstColorOption.click();
+-		WebElement addToCartButton = driver.findElement(addToCart);
+-		addToCartButton.click();
+-	}
+-	@After
+-	public void quitDriver() {
+-		driver.quit();
+-		driver = null;
+-	}
+-}
+Index: src/main/java/enums/Browser.java
+===================================================================
+diff --git a/src/main/java/enums/Browser.java b/src/main/java/enums/Browser.java
+deleted file mode 100644
+--- a/src/main/java/enums/Browser.java	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
++++ /dev/null	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
+@@ -1,66 +0,0 @@
+-package enums;
+-
+-import io.github.bonigarcia.wdm.WebDriverManager;
+-import org.openqa.selenium.WebDriver;
+-import org.openqa.selenium.chrome.ChromeDriver;
+-import org.openqa.selenium.chrome.ChromeOptions;
+-import org.openqa.selenium.firefox.FirefoxDriver;
+-import org.openqa.selenium.firefox.FirefoxOptions;
+-import org.openqa.selenium.ie.InternetExplorerDriver;
+-import org.openqa.selenium.ie.InternetExplorerOptions;
+-import org.openqa.selenium.remote.DesiredCapabilities;
+-import factory.BrowserProvider;
+-
+-public enum Browser {
+-    FIREFOX {
+-        @Override
+-        public WebDriver initialize(DesiredCapabilities capabilities) {
+-            synchronized (BrowserProvider.class) {
+-                WebDriverManager.firefoxdriver().setup();
+-                FirefoxOptions options = new FirefoxOptions();
+-                options.merge(capabilities);
+-                return new FirefoxDriver(options);
+-            }
+-        }
+-    },
+-
+-    CHROME {
+-        @Override
+-        public WebDriver initialize(DesiredCapabilities capabilities) {
+-            synchronized (BrowserProvider.class) {
+-                WebDriverManager.chromedriver().setup();
+-                ChromeOptions options = new ChromeOptions();
+-                options.merge(capabilities);
+-                return new ChromeDriver(options);
+-            }
+-        }
+-    },
+-
+-    IE {
+-        @Override
+-        public WebDriver initialize(DesiredCapabilities capabilities) {
+-            synchronized (BrowserProvider.class) {
+-                WebDriverManager.iedriver().setup();
+-                InternetExplorerOptions options = new InternetExplorerOptions();
+-                options.merge(capabilities);
+-                return new InternetExplorerDriver(options);
+-            }
+-        }
+-    };
+-
+-    public abstract WebDriver initialize(DesiredCapabilities capabilities);
+-
+-    @Override
+-    public String toString() {
+-        switch (this) {
+-            case FIREFOX:
+-                return "FIREFOX";
+-            case CHROME:
+-                return "CHROME";
+-            case IE:
+-                return "IE";
+-            default:
+-                throw new IllegalArgumentException();
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: src/main/java/factory/BrowserProvider.java
+===================================================================
+diff --git a/src/main/java/factory/BrowserProvider.java b/src/main/java/factory/BrowserProvider.java
+deleted file mode 100644
+--- a/src/main/java/factory/BrowserProvider.java	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
++++ /dev/null	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
+@@ -1,30 +0,0 @@
+-package factory;
+-
+-import enums.Browser;
+-import org.openqa.selenium.WebDriver;
+-import org.openqa.selenium.remote.DesiredCapabilities;
+-import org.openqa.selenium.remote.RemoteWebDriver;
+-
+-import java.net.URL;
+-
+-public class BrowserProvider {
+-
+-        public static WebDriver createDriver(Browser browser, DesiredCapabilities capabilities) {
+-            capabilities.setBrowserName(browser.toString().toLowerCase());
+-            return browser.initialize(capabilities);
+-        }
+-
+-        public static WebDriver createDriver(Browser browser) {
+-            return createDriver(browser, new DesiredCapabilities());
+-        }
+-
+-        public static RemoteWebDriver createDriver(URL hubUrl, Browser browser, DesiredCapabilities capabilities) {
+-            capabilities.setBrowserName(browser.toString().toLowerCase());
+-            return new RemoteWebDriver(hubUrl, capabilities);
+-        }
+-
+-        public static RemoteWebDriver createDriver(URL hubUrl, Browser browser) {
+-            return createDriver(hubUrl, browser, new DesiredCapabilities());
+-        }
+-
+-}
+Index: src/main/java/pages/MyWishlistPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pages/MyWishlistPage.java b/src/main/java/pages/MyWishlistPage.java
+new file mode 100644
+--- /dev/null	(date 1707573686711)
++++ b/src/main/java/pages/MyWishlistPage.java	(date 1707573686711)
+@@ -0,0 +1,19 @@
++package pages;
++
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import utils.Waiters;
++
++public class MyWishlistPage extends PageBase {
++
++    By productToWishList= By.xpath("//*[@class='product-item']");
++
++    public MyWishlistPage(WebDriver driver) {super(driver);}
++
++
++    public void isProductWishlistPopupDisplayed() {
++        WebElement productAddedToWishlistMessage = driver.findElement(productToWishList);
++        productAddedToWishlistMessage.isDisplayed();
++    }
++}
+\ No newline at end of file
+Index: src/test/java/test/AddToWishlistTests.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/test/AddToWishlistTests.java b/src/test/java/test/AddToWishlistTests.java
+new file mode 100644
+--- /dev/null	(date 1707571077700)
++++ b/src/test/java/test/AddToWishlistTests.java	(date 1707571077700)
+@@ -0,0 +1,37 @@
++package test;
++
++import factory.WebDriverCustom;
++import org.openqa.selenium.WebDriver;
++import org.testng.annotations.AfterSuite;
++import org.testng.annotations.BeforeSuite;
++import org.testng.annotations.Test;
++import pages.*;
++
++@Test
++public class AddToWishlistTests {
++
++	private WebDriver driver;
++	LoginPage loginPage = new LoginPage(driver);
++	ProductPage productPage = new ProductPage(driver);
++	MyWishlistPage wishListPage = new MyWishlistPage(driver);
++	@BeforeSuite
++	public void initalize() {
++		driver = WebDriverCustom.getWebDriver();
++		driver.manage().window().maximize();
++		driver.get("https://magento.softwaretestingboard.com/");
++		loginPage.performLogin();
++	}
++
++	@Test
++	public void addProductToWishlist() {
++		productPage.selectProduct();
++		productPage.addToWishlist();
++		wishListPage.isProductWishlistPopupDisplayed();
++	}
++
++	@AfterSuite
++	public void quitDriver() {
++		driver.quit();
++		driver = null;
++	}
++}
+\ No newline at end of file
+Index: src/main/java/factory/AddressFields.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/factory/AddressFields.java b/src/main/java/factory/AddressFields.java
+new file mode 100644
+--- /dev/null	(date 1707577455742)
++++ b/src/main/java/factory/AddressFields.java	(date 1707577455742)
+@@ -0,0 +1,87 @@
++package factory;
++
++import lombok.AllArgsConstructor;
++import lombok.Data;
++import lombok.Getter;
++
++import java.util.Random;
++
++@Getter
++@Data
++@AllArgsConstructor
++
++public class AddressFields {
++
++    private String phoneNumber;
++    private String streetAddress;
++    private String city;
++    private String state;
++    private String zipCode;
++    private String country;
++
++    public AddressFields() {
++        generateRandomAddress();
++    }
++
++    private void generateRandomAddress() {
++        phoneNumber = generateRandomPhoneNumber();
++        streetAddress = generateRandomString(10) + " Street";
++        city = generateRandomString(8) + " City";
++        state = "Bacău";
++        zipCode = generateRandomNumericString(5);
++        country = "RO";
++    }
++
++    private String generateRandomPhoneNumber() {
++        Random random = new Random();
++        StringBuilder phoneNumber = new StringBuilder("+");
++        for (int i = 0; i < 10; i++) {
++            phoneNumber.append(random.nextInt(10));
++        }
++        return phoneNumber.toString();
++    }
++
++    private String generateRandomString(int length) {
++        Random random = new Random();
++        StringBuilder randomString = new StringBuilder();
++        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
++        for (int i = 0; i < length; i++) {
++            randomString.append(characters.charAt(random.nextInt(characters.length())));
++        }
++        return randomString.toString();
++    }
++
++    private String generateRandomNumericString(int length) {
++        Random random = new Random();
++        StringBuilder randomString = new StringBuilder();
++        String characters = "0123456789";
++        for (int i = 0; i < length; i++) {
++            randomString.append(characters.charAt(random.nextInt(characters.length())));
++        }
++        return randomString.toString();
++    }
++
++    public String getPhoneNumber() {
++        return phoneNumber;
++    }
++
++    public String getStreetAddress() {
++        return streetAddress;
++    }
++
++    public String getCity() {
++        return city;
++    }
++
++    public String getState() {
++        return state;
++    }
++
++    public String getZipCode() {
++        return zipCode;
++    }
++
++    public String getCountry() {
++        return country;
++    }
++}
+\ No newline at end of file
+Index: src/main/java/pages/MyAccountPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pages/MyAccountPage.java b/src/main/java/pages/MyAccountPage.java
+new file mode 100644
+--- /dev/null	(date 1707577293503)
++++ b/src/main/java/pages/MyAccountPage.java	(date 1707577293503)
+@@ -0,0 +1,57 @@
++package pages;
++import factory.AddressFields;
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.ui.Select;
++import utils.Waiters;
++
++import java.util.List;
++
++public class MyAccountPage extends PageBase {
++    private final Waiters waiters = new Waiters(driver);
++
++    By phoneNumber = By.id("telephone");
++    By streetAddress = By.id("street_1");
++    By city = By.id("city");
++    By stateList = By.id("region_id");
++    By zipCode = By.id("zip");
++    By countryList = By.id("country");
++    By saveAddressBtn = By.className("save");
++    By addNewAddressBtn = By.className("add");
++    By addressSavedPopup= By.className("message-success");
++
++    public MyAccountPage(WebDriver driver) {
++        super(driver);
++    }
++
++
++    public void fillAddressFields(AddressFields addressFields) {
++        driver.findElement(phoneNumber).sendKeys(addressFields.getPhoneNumber());
++        driver.findElement(streetAddress).sendKeys(addressFields.getStreetAddress());
++        driver.findElement(city).sendKeys(addressFields.getCity());
++        WebElement countryDropdown = driver.findElement(countryList);
++        Select countrySelect = new Select(countryDropdown);
++        countrySelect.selectByValue(addressFields.getCountry());
++
++        WebElement stateDropdown = driver.findElement(stateList);
++        Select stateSelect = new Select(stateDropdown);
++        stateSelect.selectByVisibleText(addressFields.getState());
++        driver.findElement(zipCode).sendKeys(addressFields.getZipCode());
++    }
++
++    public void saveAddress() {
++       driver.findElement((By) saveAddressBtn).click();
++    }
++
++    public void addNewAddress() {
++        waiters.waitForVisible(addNewAddressBtn);
++        driver.findElement(addNewAddressBtn).click();
++    }
++
++    public void isAddedAdressPopupDisplayed() {
++        WebElement addressIsSavedPopup = driver.findElement(addressSavedPopup);
++        addressIsSavedPopup.isDisplayed();
++    }
++}
++        
+\ No newline at end of file
+Index: src/main/java/utils/Waiters.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package utils;\r\n\r\nimport org.openqa.selenium.By;\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.support.ui.ExpectedConditions;\r\nimport org.openqa.selenium.support.ui.WebDriverWait;\r\n\r\nimport java.time.Duration;\r\nimport java.util.List;\r\nimport java.util.function.Function;\r\n\r\npublic class Waiters {\r\n\r\n    private static final Long DEFAULT_WAIT_TIME = 20L;\r\n    private final WebDriverWait wait;\r\n\r\n\r\n    public Waiters(WebDriver driver) {\r\n        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed\r\n    }\r\n\r\n    public Waiters waitForElementToBeVisible(By locator) {\r\n        return (Waiters) wait.until(ExpectedConditions.visibilityOfElementLocated(locator));\r\n    }\r\n\r\n    public Waiters waitForElementToBeClickable(By locator) {\r\n        return (Waiters) wait.until(ExpectedConditions.elementToBeClickable(locator));\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/utils/Waiters.java b/src/main/java/utils/Waiters.java
+--- a/src/main/java/utils/Waiters.java	(revision 650b69b097fe42dfd9d7306a9879c73273d9aaea)
++++ b/src/main/java/utils/Waiters.java	(date 1707517871162)
+@@ -1,8 +1,10 @@
+ package utils;
+ 
++import factory.WebDriverCustom;
+ import org.openqa.selenium.By;
+ import org.openqa.selenium.WebDriver;
+ import org.openqa.selenium.WebElement;
++import org.openqa.selenium.chrome.ChromeDriver;
+ import org.openqa.selenium.support.ui.ExpectedConditions;
+ import org.openqa.selenium.support.ui.WebDriverWait;
+ 
+@@ -12,22 +14,18 @@
+ 
+ public class Waiters {
+ 
+-    private static final Long DEFAULT_WAIT_TIME = 20L;
+     private final WebDriverWait wait;
+ 
+-
+     public Waiters(WebDriver driver) {
+-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
++        WebDriver newDriver = WebDriverCustom.getWebDriver();
++        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+     }
+ 
+-    public Waiters waitForElementToBeVisible(By locator) {
+-        return (Waiters) wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
++    public WebElement waitForClickable(By locator) {
++        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+     }
+ 
+-    public Waiters waitForElementToBeClickable(By locator) {
+-        return (Waiters) wait.until(ExpectedConditions.elementToBeClickable(locator));
++    public WebElement waitForVisible(By locator) {
++        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+     }
+-
+-
+-
+ }
+Index: src/test/java/test/CartProductTests.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/test/CartProductTests.java b/src/test/java/test/CartProductTests.java
+new file mode 100644
+--- /dev/null	(date 1707570630170)
++++ b/src/test/java/test/CartProductTests.java	(date 1707570630170)
+@@ -0,0 +1,62 @@
++package test;
++
++
++import factory.WebDriverCustom;
++import org.openqa.selenium.WebDriver;
++import org.testng.annotations.AfterSuite;
++import org.testng.annotations.BeforeSuite;
++import org.testng.annotations.Test;
++import pages.CartPage;
++import pages.LoginPage;
++import pages.ProductPage;
++
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++
++@Test
++public class CartProductTests {
++
++    private WebDriver driver;
++
++    LoginPage loginPage = new LoginPage(driver);
++    ProductPage productPage = new ProductPage(driver);
++    CartPage cartPage = new CartPage(driver);
++
++    @BeforeSuite
++    public void initalize() {
++        driver = WebDriverCustom.getWebDriver();
++        driver.manage().window().maximize();
++        driver.get("https://magento.softwaretestingboard.com/");
++        loginPage.performLogin();
++    }
++
++    @Test
++    public void checkCartProductQuantityIsCorrect() {
++        cartPage.openCart();
++        int initialQuantity = cartPage.getProductQuantity();
++        productPage.selectProduct();
++        productPage.selectSize();
++        productPage.selectColor();
++        productPage.addToCard();
++        cartPage.openCart();
++        int updatedQuantity = cartPage.getProductQuantity();
++        assert initialQuantity < updatedQuantity : "Updated quantity is not greater than initial quantity";
++    }
++
++    @Test
++    public void addProductAndCheckCounterUpdate() {
++        int initialCounterValue = cartPage.getCounterValue();
++        productPage.selectProduct();
++        productPage.selectSize();
++        productPage.selectColor();
++        productPage.addToCard();
++        int updatedCounterValue = cartPage.getCounterValue();
++        assert updatedCounterValue > initialCounterValue : "Updated counter is not greater than initial counter value";
++    }
++
++    @AfterSuite
++    public void quitDriver() {
++        driver.quit();
++        driver = null;
++    }
++}
+Index: src/main/java/pages/CartPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pages/CartPage.java b/src/main/java/pages/CartPage.java
+new file mode 100644
+--- /dev/null	(date 1707568009904)
++++ b/src/main/java/pages/CartPage.java	(date 1707568009904)
+@@ -0,0 +1,52 @@
++package pages;
++
++import lombok.SneakyThrows;
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import org.testng.Assert;
++import utils.Waiters;
++
++import java.time.Duration;
++import java.util.List;
++import java.util.concurrent.TimeUnit;
++
++public class CartPage extends PageBase {
++    private static final String SHOPPING_CART = "Shopping Cart";
++    private static final String CART = "https://magento.softwaretestingboard.com/checkout/cart/";
++
++    private final Waiters waiters = new Waiters(driver);
++    private final By cartCounterIcon = By.xpath("//*[@class='counter-number']");
++    private final By cartPageTitle = By.xpath("//*[@class='page-title']");
++    private final By cartQuantities = By.xpath("//*[@class='input-text qty']");
++
++    public CartPage(WebDriver driver) {
++        super(driver);
++    }
++    public void openCart() {
++        driver.get(CART);
++        driver.navigate().refresh();
++        waiters.waitForVisible(cartPageTitle);
++        String pageTitle = driver.findElement(cartPageTitle).getText();
++        Assert.assertEquals(pageTitle, SHOPPING_CART, "Page title is not as expected");
++
++    }
++
++    @SneakyThrows
++    public int getCounterValue() {
++        Thread.sleep(5000);
++        WebElement cartCounter = driver.findElement(cartCounterIcon);
++        return Integer.parseInt(cartCounter.getText());
++    }
++
++
++    public int getProductQuantity() {
++        int initialQuantity = 0;
++        List<WebElement> quantities = driver.findElements(cartQuantities);
++        for (WebElement productQuantity : quantities) {
++            int quantity = Integer.parseInt(productQuantity.getAttribute("value"));
++            initialQuantity += quantity;
++        }
++        return initialQuantity;
++    }
++}
+\ No newline at end of file
+Index: src/test/java/test/AddNewAddressTests.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/test/AddNewAddressTests.java b/src/test/java/test/AddNewAddressTests.java
+new file mode 100644
+--- /dev/null	(date 1707575076954)
++++ b/src/test/java/test/AddNewAddressTests.java	(date 1707575076954)
+@@ -0,0 +1,41 @@
++package test;
++
++import factory.AddressFields;
++import factory.WebDriverCustom;
++import org.openqa.selenium.WebDriver;
++import org.testng.annotations.AfterSuite;
++import org.testng.annotations.BeforeSuite;
++import org.testng.annotations.Test;
++import pages.LoginPage;
++import pages.MyAccountPage;
++import pages.MyWishlistPage;
++import pages.ProductPage;
++
++@Test
++public class AddNewAddressTests {
++
++	private WebDriver driver;
++	LoginPage loginPage = new LoginPage(driver);
++	ProductPage productPage = new ProductPage(driver);
++	MyWishlistPage wishListPage = new MyWishlistPage(driver);
++	MyAccountPage accountPage = new MyAccountPage(driver);
++	@BeforeSuite
++	public void initalize() {
++		driver = WebDriverCustom.getWebDriver();
++		driver.manage().window().maximize();
++		driver.get("https://magento.softwaretestingboard.com/");
++		loginPage.performLogin();
++	}
++
++	@Test
++	public void addProductToWishlist() {
++		driver.get("https://magento.softwaretestingboard.com/customer/address/new/");
++		accountPage.fillAddressFields(new AddressFields());
++	}
++
++	@AfterSuite
++	public void quitDriver() {
++		driver.quit();
++		driver = null;
++	}
++}
+\ No newline at end of file
