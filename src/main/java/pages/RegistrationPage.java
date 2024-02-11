@@ -18,7 +18,7 @@ public class RegistrationPage extends PageBase {
     private final By passwordLocator = By.id("password");
     private final By confirmPasswordLocator = By.id("password-confirmation");
     private final By createAnAccountBtnLocator = By.className("submit");
-    private final By successfullRegistrationPopup = By.xpath("//*[@class='messages']");
+    private final By successfulRegistrationPopup = By.xpath("//*[@class='messages']");
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
@@ -40,7 +40,7 @@ public class RegistrationPage extends PageBase {
     @SneakyThrows
     public void successfulRegistrationPopupIsDisplayed() {
         Thread.sleep(5000);
-        String registrationSuccessful = driver.findElement(successfullRegistrationPopup).getText();
+        String registrationSuccessful = driver.findElement(successfulRegistrationPopup).getText();
         assertEquals(EXPECTED_REGISTRATION_MESSAGE, registrationSuccessful);
     }
 }

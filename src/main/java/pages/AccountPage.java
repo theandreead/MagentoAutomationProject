@@ -42,14 +42,8 @@ public class AccountPage extends PageBase {
        driver.findElement((By) saveAddressBtn).click();
     }
 
-    public void addNewAddress() {
-        waiters.waitForVisible(addNewAddressBtn);
-        driver.findElement(addNewAddressBtn).click();
-    }
-
     public void isAddedAddressPopupDisplayed() {
         WebElement addressIsSavedPopup = driver.findElement(addressSavedPopup);
         addressIsSavedPopup.isDisplayed();
     }
 }
-        

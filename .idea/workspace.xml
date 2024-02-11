@@ -6,10 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="21a9e1b1-c80c-42f2-9628-34fb05a0173f" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/AddressFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/AddressFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegistrationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WishlistPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WishlistPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/CreateNewUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/CreateNewUserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707591866166</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1707644792707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707644792707</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,15 +320,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/test/PlaceOrderTests.java</url>
           <line>55</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/test/CartProductTests.java</url>
-          <line>46</line>
-          <properties class="test.CartProductTests" method="checkCartProductQuantityIsCorrect">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

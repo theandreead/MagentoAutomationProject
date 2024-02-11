@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utils.Waiters;
 
-import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static factory.Constants.CART;
 import static factory.Constants.SHOPPING_CART;

@@ -9,9 +9,6 @@ import utils.Waiters;
 import java.util.List;
 import java.util.Random;
 
-import static factory.Constants.EMAIL;
-import static factory.Constants.PASSWORD;
-
 public class ProductPage extends PageBase {
     Waiters waiters = new Waiters(driver);
 
