@@ -1,12 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="test">
-    <test name="MyMagentoTests">
+    <test name="test">
         <classes>
             <class name="test.AddNewAddressTests"/>
             <class name="test.AddToWishlistTests"/>
             <class name="test.CartProductTests"/>
             <class name="test.HomePageTests"/>
-            <!-- Add more test classes as needed -->
         </classes>
     </test>
 </suite>
