@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @Test
-public class CartProductTests extends BaseTest{
+public class CartProductTests extends BaseTest {
 
     private WebDriver driver;
 

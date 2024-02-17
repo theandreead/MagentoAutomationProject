@@ -6,7 +6,7 @@ import pages.WishlistPage;
 import pages.HomePage;
 
 @Test
-public class AddToWishlistTests  extends  BaseTest{
+public class AddToWishlistTests  extends  BaseTest {
 
 	ProductPage productPage = new ProductPage(driver);
 	WishlistPage wishListPage = new WishlistPage(driver);

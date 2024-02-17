@@ -10,7 +10,7 @@ import static factory.Constants.ACCOUNT_ADDRESS;
 
 
 @Test
-public class AddNewAddressTests extends BaseTest{
+public class AddNewAddressTests extends BaseTest {
 
 	private WebDriver driver;
 	AccountPage accountPage = new AccountPage(driver);
