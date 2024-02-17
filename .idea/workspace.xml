@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21a9e1b1-c80c-42f2-9628-34fb05a0173f" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_10_2024_5_04_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_10_2024_5_04_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_9_2024_10_41_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_9_2024_10_41_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/NewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/NewUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/WebDriverCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/WebDriverCustom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegistrationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/CreateNewUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/CreateNewUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Waiters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Waiters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/AddNewAddressTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AddNewAddressTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/AddToWishlistTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AddToWishlistTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/CartProductTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/CartProductTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/HomePageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +61,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -69,55 +77,55 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "JUnit.HomePageTests.homePageCheckTitle.executor": "Debug",
-    "JUnit.PlaceOrderTests.userCanPlaceAnOrder.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.Magento [clean,install].executor": "Run",
-    "Maven.Magento [clean,validate,compile,test...].executor": "Run",
-    "Maven.Magento [clean].executor": "Run",
-    "Maven.Magento [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.AddNewAddressTests.addNewAddressForAccount.executor": "Run",
-    "TestNG.AddNewAddressTests.addNewAddressTest.executor": "Run",
-    "TestNG.AddNewAddressTests.addProductToWishlist.executor": "Run",
-    "TestNG.AddToWishlistTests.addProductToWishlist.executor": "Run",
-    "TestNG.C:/Users/PC/IdeaProjects/Magento/src/testng.xml.executor": "Run",
-    "TestNG.CartProductTests.addProductAndCheckCounterUpdate.executor": "Run",
-    "TestNG.CartProductTests.checkCartPricesAreCorrect.executor": "Run",
-    "TestNG.CartProductTests.checkCartProductQuantityIsCorrect.executor": "Run",
-    "TestNG.CartProductTests.checkCartTotalPriceIsCorrect.executor": "Run",
-    "TestNG.CartProductTests.checkProductQuantityIsCorrect.executor": "Run",
-    "TestNG.CreateNewUserTest.createNewUserTest.executor": "Run",
-    "TestNG.HomePageTests.executor": "Run",
-    "TestNG.HomePageTests.goThroughSectionsAndSubSections.executor": "Run",
-    "TestNG.HomePageTests.homePageCheckTitle.executor": "Run",
-    "TestNG.HomePageTests.performLogin.executor": "Run",
-    "TestNG.OrderPlacementTests.OrderPlacementTests.executor": "Run",
-    "TestNG.OrderPlacementTests.homePageCheckTitle.executor": "Run",
-    "TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart (1).executor": "Debug",
-    "TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart.executor": "Run",
-    "TestNG.PlaceOrderTests.performLogin.executor": "Run",
-    "TestNG.PlaceOrderTests.userCanPlaceAnOrder.executor": "Run",
-    "TestNG.SelectProductTests.addProductToWishlist.executor": "Run",
-    "TestNG.SelectProductTests.selectProductAndAddToCart.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;JUnit.HomePageTests.homePageCheckTitle.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PlaceOrderTests.userCanPlaceAnOrder.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Magento [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Magento [clean,validate,compile,test...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Magento [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Magento [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.AddNewAddressTests.addNewAddressForAccount.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AddNewAddressTests.addNewAddressTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AddNewAddressTests.addProductToWishlist.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AddToWishlistTests.addProductToWishlist.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.C:/Users/PC/IdeaProjects/Magento/src/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CartProductTests.addProductAndCheckCounterUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CartProductTests.checkCartPricesAreCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CartProductTests.checkCartProductQuantityIsCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CartProductTests.checkCartTotalPriceIsCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CartProductTests.checkProductQuantityIsCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CreateNewUserTest.createNewUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HomePageTests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HomePageTests.goThroughSectionsAndSubSections.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HomePageTests.homePageCheckTitle.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HomePageTests.performLogin.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.OrderPlacementTests.OrderPlacementTests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.OrderPlacementTests.homePageCheckTitle.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart (1).executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.PlaceOrderTests.checkNewArrivalsProductsCanBeAddedToCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PlaceOrderTests.performLogin.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PlaceOrderTests.userCanPlaceAnOrder.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SelectProductTests.addProductToWishlist.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SelectProductTests.selectProductAndAddToCart.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pages" />
@@ -131,8 +139,18 @@
       <recent name="pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.HomePageTests.performLogin">
-    <configuration name="AddNewAddressTests.addNewAddressForAccount" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CartProductTests.checkCartPricesAreCorrect">
+    <configuration name="C:/Users/PC/IdeaProjects/Magento/src/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Magento" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartProductTests.checkCartPricesAreCorrect" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Magento" />
       <extension name="coverage">
         <pattern>
@@ -141,19 +159,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.AddNewAddressTests" />
-      <option name="METHOD_NAME" value="addNewAddressForAccount" />
+      <option name="MAIN_CLASS_NAME" value="test.CartProductTests" />
+      <option name="METHOD_NAME" value="checkCartPricesAreCorrect" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="C:/Users/PC/IdeaProjects/Magento/src/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Magento" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -216,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CartProductTests.checkCartPricesAreCorrect" />
         <item itemvalue="TestNG.HomePageTests.performLogin" />
         <item itemvalue="TestNG.C:/Users/PC/IdeaProjects/Magento/src/testng.xml" />
         <item itemvalue="TestNG.CartProductTests.checkCartProductQuantityIsCorrect" />
         <item itemvalue="TestNG.CreateNewUserTest.createNewUserTest" />
-        <item itemvalue="TestNG.AddNewAddressTests.addNewAddressForAccount" />
       </list>
     </recent_temporary>
   </component>
@@ -242,6 +250,8 @@
       <workItem from="1707166171860" duration="6738000" />
       <workItem from="1707217203713" duration="207000" />
       <workItem from="1707217423779" duration="23663000" />
+      <workItem from="1708181890589" duration="76000" />
+      <workItem from="1708182238778" duration="1399000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />

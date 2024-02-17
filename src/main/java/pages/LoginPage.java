@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
+import java.time.Duration;
 import static factory.Constants.EMAIL;
 import static factory.Constants.PASSWORD;
 
@@ -24,6 +24,7 @@ public class LoginPage extends PageBase {
         driver.findElement(email).sendKeys(EMAIL);
         driver.findElement(password).sendKeys(PASSWORD);
         driver.findElement(loginInButton).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Assert.assertTrue(driver.findElement(userAccountName).isDisplayed(), "User Account is not logged-in");
     }
 }

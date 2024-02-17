@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utils.Waiters;
 
+import java.time.Duration;
 import java.util.List;
 
 import static factory.Constants.CART;
@@ -30,7 +31,7 @@ public class CartPage extends PageBase {
 
     @SneakyThrows
     public void openCart() {
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(CART);
         driver.navigate().refresh();
         waiters.waitForVisible(cartPageTitle);
@@ -40,7 +41,7 @@ public class CartPage extends PageBase {
 
     @SneakyThrows
     public int getCounterValue() {
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebElement cartCounter = driver.findElement(cartCounterIcon);
         return Integer.parseInt(cartCounter.getText());
     }
@@ -95,5 +96,4 @@ public class CartPage extends PageBase {
         String text = element.getText().replaceAll("[^0-9.]+", "");
         return Double.parseDouble(text);
     }
-
 }

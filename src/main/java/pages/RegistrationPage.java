@@ -1,14 +1,13 @@
 package pages;
 
 import factory.NewUser;
-import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static factory.Constants.EMAIL;
-import static factory.Constants.PASSWORD;
+import java.time.Duration;
+
+
 import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
 
 public class RegistrationPage extends PageBase {
     private static final String EXPECTED_REGISTRATION_MESSAGE = "Thank you for registering with Main Website Store.";
@@ -37,9 +36,8 @@ public class RegistrationPage extends PageBase {
         driver.findElement(confirmPasswordLocator).sendKeys(user.getPassword());
     }
 
-    @SneakyThrows
     public void successfulRegistrationPopupIsDisplayed() {
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         String registrationSuccessful = driver.findElement(successfulRegistrationPopup).getText();
         assertEquals(EXPECTED_REGISTRATION_MESSAGE, registrationSuccessful);
     }

@@ -1,10 +1,6 @@
 package test;
 
-
-import factory.WebDriverCustom;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.HomePage;
@@ -15,26 +11,18 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @Test
-public class CartProductTests {
+public class CartProductTests extends BaseTest{
 
     private WebDriver driver;
 
-    LoginPage loginPage = new LoginPage(driver);
     ProductPage productPage = new ProductPage(driver);
     CartPage cartPage = new CartPage(driver);
     HomePage homePage = new HomePage(driver);
 
-    @BeforeSuite
-    public void initalize() {
-        driver = WebDriverCustom.getWebDriver();
-        driver.manage().window().maximize();
-        driver.get("https://magento.softwaretestingboard.com/");
-        loginPage.performLogin();
-    }
-
     @Test
     public void addProductAndCheckCounterUpdate() {
         int initialCounterValue = cartPage.getCounterValue();
+        homePage.goToSection("What's New");
         productPage.selectProduct();
         productPage.selectSize();
         productPage.selectColor();
@@ -60,6 +48,7 @@ public class CartProductTests {
 
     @Test
     public void checkCartPricesAreCorrect() {
+        homePage.goToSection("What's New");
         productPage.selectProduct();
         productPage.selectSize();
         productPage.selectColor();
@@ -67,11 +56,5 @@ public class CartProductTests {
         cartPage.openCart();
         assertTrue(cartPage.checkCartPriceSubtotal(), "Cart subtotal price is not correct");
         assertTrue(cartPage.checkTotalPriceIsCorrect(), "Cart total price is not correct");
-    }
-
-    @AfterSuite
-    public void quitDriver() {
-        driver.quit();
-        driver = null;
     }
 }
