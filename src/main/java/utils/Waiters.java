@@ -11,10 +11,8 @@ import java.time.Duration;
 public class Waiters {
 
     private final WebDriverWait wait;
-    private final WebDriver driver;
 
     public Waiters(WebDriver driver) {
-        this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.Waiters;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -73,7 +74,7 @@ public class ProductPage extends PageBase {
 
 
     public void addToCard() {
-        driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         waiters.waitForVisible(addToCart);
         waiters.waitForClickable(addToCart);
         WebElement addToCartButton = driver.findElement(addToCart);

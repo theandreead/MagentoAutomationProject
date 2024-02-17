@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.HomePage;
-import pages.LoginPage;
 import pages.ProductPage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
