@@ -1,7 +1,7 @@
 This is an automation project for covering product related scenarios.
 
  - Design Pattern: POM
- =  Programming language: Java
+ -  Programming language: Java
 - Framework: Selenium Webdriver
  -  Building tool: Maven
 
